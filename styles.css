@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+@font-face{
+    font-family: AudioWide;
+    src: url(AudioWide.otf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/*Kod od ChatGPT-a*/
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: url('Slike/wallparer.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0;
+}
+
+header {
+    /*background-color: rgba(51, 51, 51, 0.9);*/
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 2px solid #ADD8E6;
+    font-family: 'Audiowide', cursive;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Audiowide', cursive;
+    border-radius: 5px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    background-color: #ADD8E6;
+    border-radius: 5px;
+}
+
+nav ul li a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #ADD8E6;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+main {
+    padding: 2rem;
+    /*margin: 0 1rem;*/
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 1200px;
+}
+
+section {
+    /*margin-bottom: 2rem;*/
+    margin: 1.5rem 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    /*padding: 2rem;*/
+    padding: 1.5rem;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+section h2 {
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+    color: #ADD8E6;
+    margin-bottom: 1rem;
+}
+
+section p {
+    /*text-align: left;
+    margin-right: 320px; /* Leave space for the floating image 
+    */
+    margin: 1rem 0;
+}
+
+.text-content{
+    float: left;
+    width: calc(100% - 320px);
+}
+
+.product-image {
+    float: right;
+    max-width: 300px;
+    margin-left: 1rem;
+    /*border: 2px solid #c22326;
+    border-radius: 5px;*/
+}
+
+.image-caption {
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: right;
+    margin: 0.5rem 0 1rem 0;
+}
+
+footer {
+    /*background-color: rgba(51, 51, 51, 0.9);*/
+    background-color: rgba(51, 51, 51, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 2px solid #ADD8E6;
+}
+
+/*Design Section*/
+
+.text-content-right {
+    float: right;
+    width: calc(100% - 320px); /* Adjust width to fit with image */
+}
+
+.product-image-left {
+    float: left;
+    max-width: 300px;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+
+    /*Kod od ChatGPT-a
+
+.image-container {
+    position: relative;
+    width: 300px;  Fixed width for container 
+    height: auto;  Allows height to adjust based on image 
+    float: left;  Ensures container floats like the images 
+    margin-right: 1rem;
+    border-radius: 5px;
+    overflow: hidden;  Ensures the back image doesn't overflow the container 
+}
+
+.image-front, .image-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 300px;
+    transition: opacity 0.5s ease-in-out; Smooth transition for opacity 
+}
+
+.image-back {
+    opacity: 0;  Hide the back image by default 
+}
+
+.image-container:hover .image-back {
+    opacity: 1;  Show the back image on hover 
+}
+
+.image-container:hover .image-front {
+    opacity: 0;  Hide the front image on hover 
+}
+    */
+
+    /* Nas Kod*/
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+    
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+    
+.image-container .image-back {
+    opacity: 0;
+}
+    
+.image-container:hover .image-back {
+    opacity: 1;
+}
+    
+.image-container:hover .image-front {
+    opacity: 0;
+}
+
+    /* Kod od ChatGPT-a*/
+/*
+Ensure the Design section has a fixed height and scrolls if content overflows 
+#design {
+    height: 600px;  Adjust the height as needed 
+    overflow-y: auto;  Enable vertical scrolling 
+    padding-right: 15px;  Adjust padding to prevent scrollbar overlap with content 
+}
+
+ Ensure the image-container and text-content-right fit within the section 
+#design .image-container,
+#design .text-content-right {
+    width: 100%;
+    box-sizing: border-box;
+}
+*/
+
+.scrollable-container {
+    max-height: 300px;
+    overflow-y: auto; 
+    padding-right: 1rem; 
+    box-sizing: border-box; 
+}
+
+.scrollable-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark scrollbar background */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background-color: #189AB4; /* Red scrollbar thumb */
+    border-radius: 4px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+    background-color: #ADD8E6; /* Brighter red on hover */
+}
+
+    /*Kod od ChatGPT-a*/
+
+    /*Perfomance Section*/
+/* Common styles for floating text and image in sections */
+.text-content-perf {
+    float: left;
+}
+
+.product-image-perf {
+    float: right;
+    max-width: 300px;
+    margin-left: 1rem;
+    border-radius: 5px; /* Remove border property */
+}
+
+/* Clearfix to handle floating elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Apply styles specifically to the Performance section */
+#performance {
+    position: relative;
+    padding-bottom: 2rem; /* Ensure space for footer if needed */
+}
+
+/*Conclusion*/
+
+/* Center the image and set its height */
+.conclusion-image {
+    text-align: center; /* Center the image */
+    margin-top: 20px; /* Add some space above the image */
+}
+
+.conclusion-picture {
+    height: 300px; /* Set the height of the image */
+    width: auto; /* Maintain the aspect ratio */
+    display: inline-block; /* Center the image */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: transform 3s ease-in-out; /* Smooth transition for the zoom effect */
+}
+
+/* Animation: Zoom in and out */
+@keyframes zoom {
+    0%, 100% {
+        transform: scale(1); /* Initial and final scale */
+    }
+    50% {
+        transform: scale(1.05); /* Zoom in slightly */
+    }
+}
+
+.conclusion-picture {
+    animation: zoom 5s infinite; /* Apply the zoom animation */
+}
+
+/*Kod od ChatGPT-a*/
+
+/*@media (max-width: 768px) {
+    .product-image {
+        float: none;
+        display: block;
+        margin: 1rem auto;
+    }
+
+    .text-content {
+        width: auto;
+        float: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+}
+*/
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Slightly larger text for readability */
+    }
+
+    header {
+        padding: 0.5rem 0; /* Reduced padding */
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: stretch;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Add space between items */
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 0.5rem; /* Padding for easier tapping */
+    }
+
+    main {
+        padding: 1rem; /* Reduced padding */
+        margin: 0; /* Remove auto margins */
+    }
+
+    section {
+        padding: 1rem; /* Reduced padding inside sections */
+        backdrop-filter: blur(10px);
+    }
+
+    .text-content, .text-content-right, .text-content-left {
+        width: auto; /* Full width for text */
+        float: none; /* Remove floating */
+    }
+
+    .product-image, .product-image-left, .product-image-right {
+        float: none; /* No floating on images */
+        display: block;
+        max-width: 100%; /* Ensure images fit within container */
+        margin: 1rem auto; /* Center and add margin */
+    }
+
+    .image-container img {
+        width: 100%; /* Full width for images */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .scrollable-container {
+        max-height: none; /* No max-height for scrollable content */
+        overflow-y: visible; /* Allow full visibility */
+    }
+
+    .conclusion-image {
+        text-align: center; /* Center the conclusion image */
+        margin-top: 10px; /* Adjust margin */
+    }
+
+    .conclusion-picture {
+        height: auto; /* Auto height to maintain aspect ratio */
+        width: 100%; /* Full width */
+    }
+
+    #second-section {
+        /* Ensure the flex direction stacks the items vertically */
+        flex-direction: column;
+    }
+
+    #second-section .image {
+        /* Ensure the image fits well within the container */
+        max-width: 100%;
+        margin: 10px 0; /* Space around the image */
+      }
+}
+
